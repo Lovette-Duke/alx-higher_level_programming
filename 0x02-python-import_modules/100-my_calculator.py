@@ -13,7 +13,7 @@ if __name__ == "__main__":
         exit(1)
     else:
         a = int(argv[1])
-        b = int (argv[3])
+        b = int(argv[3])
         operand = argv[2]
 
         if operand == '+':
