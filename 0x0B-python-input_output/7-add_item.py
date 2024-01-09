@@ -17,4 +17,8 @@ except FileNotFoundError:
     list_json = []
 
 
-save_to_json_file(list_json + argv[1:], filename)
+for i in argv[1:]:
+    list_json.append(i)
+
+
+save_to_json_file(list_json, filename)
