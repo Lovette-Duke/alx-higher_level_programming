@@ -20,5 +20,5 @@ class Student():
                 if i in self.__dict__.keys():
                     attr[i] = self.__dict__[i]
             return attr
-        else:
+        elif attrs is None:
             return self.__dict__
