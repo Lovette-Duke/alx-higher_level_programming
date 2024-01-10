@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This is module 2-rectangle.py """
+"""This is module 3-rectangle.py """
 
 
 class Rectangle():
@@ -46,4 +46,16 @@ class Rectangle():
     def perimeter(self):
         """ This computes the perimeter of the rectangle"""
         if self.width == 0 or self.height == 0:
-            return 0        return (2*self.width) + (2*self.height)
+            return 0
+        return (2*self.width) + (2*self.height)
+
+    def __str__(self):
+        """ print the outline of a rectangle """
+        if self.width == 0 or self.height == 0:
+            return ""
+        rec = ''
+        for h in range(self.height):
+            for w in range(self.width):
+                rec += "#"
+            rec += '\n'
+        return rec
