@@ -82,14 +82,14 @@ class Rectangle(Base):
     def display(self):
         """ prints '#' to the stdout to display
         the dimensions of the rectangle """
-        dim =''
+        dim = ''
         for y in range(self.y):
             print("")
         for h in range(self.height):
             for x in range(self.x):
                 dim += ' '
             for w in range(self.width):
-                dim +='#'
+                dim += '#'
             if h < self.height - 1:
                 dim += "\n"
         print(dim)
