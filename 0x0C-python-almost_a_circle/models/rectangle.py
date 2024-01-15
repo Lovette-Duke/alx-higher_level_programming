@@ -89,3 +89,8 @@ class Rectangle(Base):
             if h < self.height - 1:
                 dim += "\n"
         print(dim)
+
+    def __str__(self):
+        """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height> """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                        self.width, self.height)
