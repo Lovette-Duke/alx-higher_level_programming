@@ -4,6 +4,7 @@
 
 import json
 import os
+import csv
 
 
 class Base():
@@ -68,3 +69,35 @@ class Base():
                     for k, v in enumerate(inst):
                         list_inst.append(cls.create(**inst[k]))
         return list_inst
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes a csv file """
+        file = cls.__name__ + '.csv'
+        with open(file, 'w', newline='') as f:
+            write = csv.writer(f)
+            for obj in list_objs:
+                if cls.__name__ == 'Square':
+                    write.writerow([obj.id, obj.size, obj.x, obj.y])
+                if cls.__name__ == 'Rectangle':
+                    write.writerow([obj.id, obj.width,
+                                    obj.height, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes a csv file """
+        objects = []
+        file = cls.__name__ + '.csv'
+        with open(file, 'r') as f:
+            read = csv.reader(f)
+            for line in read:
+                if cls.__name__ == 'Square':
+                    inst_dic = {'id': int(line[0]), 'size': int(line[1]),
+                                'x': int(line[2]), 'y': int(line[3])}
+                if cls.__name__ == 'Rectangle':
+                    inst_dic = {'id': int(line[0]),
+                                'width': int(line[1]), 'height': int(line[2]),
+                                'x': int(line[3]), 'y': int(line[4])}
+                obj = cls.create(**inst_dic)
+                objects.append(obj)
+        return objects
