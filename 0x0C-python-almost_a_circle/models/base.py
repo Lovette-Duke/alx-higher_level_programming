@@ -32,6 +32,7 @@ class Base():
             if list_objs is None:
                 f.write("[]")
             else:
+                list_dict = []
                 for obj in list_objs:
-                    list_dict = [obj.to_dictionary()]
+                    list_dict.append(obj.to_dictionary())
                 f.write(Base.to_json_string(list_dict))
