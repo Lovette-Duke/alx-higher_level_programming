@@ -7,5 +7,5 @@ if (cont <= 2) {
 } else if (cont <= 3) {
     console.log('Argument found');
 } else {
-    console.log("Arguments found")
+    console.log("Arguments found");
 }
