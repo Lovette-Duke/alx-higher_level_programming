@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
-function add(a, b) {
-  sum = a + b;
+function add (a, b) {
+  const sum = a + b;
   console.log(sum);
 }
 
-a = Math.floor(process.argv[2]);
-b = Math.floor(process.argv[3]);
+const a = Math.floor(process.argv[2]);
+const b = Math.floor(process.argv[3]);
 
-add (a, b);
+add(a, b);
